@@ -163,6 +163,150 @@ const allRosesForSearch = [
     ...climbingRoses.map(r => ({ id: r.id, name: r.name, type: 'Climbing Rose' })),
 ];
 
+// Rose Planting Guide Topics
+const rosePlantingGuide = [
+    {
+        id: 'soil-preparation',
+        title: 'Soil Preparation',
+        description: 'Prepare the ideal soil foundation for healthy rose growth',
+        icon: '🌱',
+        content: [
+            {
+                subtitle: 'Soil Composition',
+                details: 'Roses thrive in well-draining, fertile soil with a pH between 6.0 and 6.5. Mix garden soil with compost and organic matter to improve structure.'
+            },
+            {
+                subtitle: 'Drainage',
+                details: 'Ensure excellent drainage to prevent root rot. Add sand or perlite to heavy clay soils. Roses cannot tolerate waterlogged conditions.'
+            },
+            {
+                subtitle: 'Preparation Steps',
+                details: '1. Clear the area of weeds and debris\n2. Loosen soil to 12-18 inches deep\n3. Mix in 3-4 inches of compost\n4. Add aged manure for nutrients\n5. Create planting holes 18-24 inches wide'
+            }
+        ]
+    },
+    {
+        id: 'watering',
+        title: 'Watering',
+        description: 'Master the art of proper hydration for vibrant roses',
+        icon: '💧',
+        content: [
+            {
+                subtitle: 'Watering Schedule',
+                details: 'Water deeply 2-3 times per week, providing 1-2 inches of water. Adjust frequency based on rainfall and soil moisture.'
+            },
+            {
+                subtitle: 'Best Practices',
+                details: 'Water at the base of the plant, not the foliage, to prevent fungal diseases. Early morning watering is ideal. Avoid overhead watering during humid seasons.'
+            },
+            {
+                subtitle: 'Seasonal Adjustments',
+                details: 'Spring/Summer: More frequent watering as plants are actively growing\nFall: Reduce watering to encourage dormancy\nWinter: Minimal watering unless conditions are dry'
+            }
+        ]
+    },
+    {
+        id: 'fertilizing',
+        title: 'Fertilising Roses',
+        description: 'Provide essential nutrients for continuous blooming',
+        icon: '🌻',
+        content: [
+            {
+                subtitle: 'Fertilizer Types',
+                details: 'Use balanced fertilizers (10-10-10) or rose-specific formulas. Organic options include fish emulsion, bone meal, and blood meal.'
+            },
+            {
+                subtitle: 'Feeding Schedule',
+                details: 'Start fertilizing in spring when new growth appears. Feed every 4-6 weeks during growing season. Stop in late summer to prepare for dormancy.'
+            },
+            {
+                subtitle: 'Application Tips',
+                details: 'Apply fertilizer to moist soil to prevent root burn. Follow package instructions carefully. Consider slow-release fertilizers for convenience.'
+            }
+        ]
+    },
+    {
+        id: 'mulching',
+        title: 'Mulching Rose Gardens',
+        description: 'Protect and nourish your roses with proper mulching',
+        icon: '🍂',
+        content: [
+            {
+                subtitle: 'Mulch Benefits',
+                details: 'Mulch retains soil moisture, regulates temperature, suppresses weeds, and improves soil as it decomposes.'
+            },
+            {
+                subtitle: 'Mulch Materials',
+                details: 'Use organic mulches like wood chips, shredded bark, or straw. Apply 2-4 inches around the base, keeping it 6 inches away from the stem.'
+            },
+            {
+                subtitle: 'Maintenance',
+                details: 'Refresh mulch annually. In spring, remove old mulch before new growth. Add new mulch as needed throughout the growing season.'
+            }
+        ]
+    },
+    {
+        id: 'pruning',
+        title: 'Pruning Roses',
+        description: 'Shape your roses for optimal health and blooming',
+        icon: '✂️',
+        content: [
+            {
+                subtitle: 'Pruning Goals',
+                details: 'Remove dead or diseased wood, improve air circulation, and shape the plant for better blooming and disease resistance.'
+            },
+            {
+                subtitle: 'When to Prune',
+                details: 'Spring: Main pruning when buds swell\nSummer: Light pruning and deadheading\nFall: Minimal pruning to avoid new tender growth'
+            },
+            {
+                subtitle: 'Pruning Techniques',
+                details: 'Cut at 45-degree angles above outward-facing buds. Remove dead wood to the base. Thin dense areas for better air flow. Use sharp, sterilized tools.'
+            }
+        ]
+    },
+    {
+        id: 'pest-disease',
+        title: 'Pest & Disease Management',
+        description: 'Keep your roses healthy and pest-free',
+        icon: '🛡️',
+        content: [
+            {
+                subtitle: 'Common Pests',
+                details: 'Aphids, spider mites, and sawfly larvae are frequent rose pests. Inspect regularly and remove affected leaves or use organic insecticides.'
+            },
+            {
+                subtitle: 'Common Diseases',
+                details: 'Powdery mildew, black spot, and rose rosette virus are common. Ensure good air circulation, avoid overhead watering, and remove affected foliage promptly.'
+            },
+            {
+                subtitle: 'Prevention Strategy',
+                details: 'Choose disease-resistant varieties, maintain plant health, remove fallen leaves, sanitize tools, and monitor plants regularly.'
+            }
+        ]
+    },
+    {
+        id: 'seasonal-care',
+        title: 'Seasonal Care',
+        description: 'Adjust your care routine with the seasons',
+        icon: '🌤️',
+        content: [
+            {
+                subtitle: 'Spring Care',
+                details: 'Prune back dead wood, apply fresh mulch, start fertilizing, and increase watering as growth begins.'
+            },
+            {
+                subtitle: 'Summer Care',
+                details: 'Maintain consistent watering, deadhead spent blooms, monitor for pests and diseases, and provide afternoon shade in hot climates.'
+            },
+            {
+                subtitle: 'Fall & Winter Care',
+                details: 'Gradually reduce watering and fertilizing, protect from frost in cold climates, provide winter protection with extra mulch for tender varieties.'
+            }
+        ]
+    }
+];
+
 // Height Tabs Configuration
 const heightTabs = [
     { id: 'below-1m', label: 'Below 1m', description: 'For Pots'},
@@ -203,13 +347,22 @@ function updateWishlistCount() {
 function updateRoseTypeLabel() {
     const labelElement = document.querySelector('#roseTypeBtn .dropdown-label');
     if (!labelElement) return;
-    labelElement.textContent = state.roseCategory === 'climbing' ? 'Climbing Rose' : 'Bush Rose';
+    
+    if (state.roseCategory === 'guide') {
+        labelElement.textContent = 'Rose Planting';
+    } else if (state.roseCategory === 'climbing') {
+        labelElement.textContent = 'Climbing Rose';
+    } else {
+        labelElement.textContent = 'Bush Rose';
+    }
 }
 
 function getRosesToDisplay() {
     let roses = [];
     
-    if (state.roseCategory === 'climbing') {
+    if (state.roseCategory === 'guide') {
+        return [];
+    } else if (state.roseCategory === 'climbing') {
         roses = climbingRoses;
     } else {
         switch (state.activeHeightTab) {
@@ -408,9 +561,50 @@ function updateSliderDisplay(roseId, newIndex) {
     });
 }
 
+function renderPlantingGuide() {
+    const rosesList = document.getElementById('rosesList');
+    
+    rosesList.innerHTML = `
+        <div class="planting-guide-container">
+            <div class="guide-header">
+                <h2 class="guide-title">🌹 Rose Planting Guide</h2>
+                <p class="guide-subtitle">Learn everything you need to know about planting and caring for your roses</p>
+            </div>
+            
+            <div class="guide-topics">
+                ${rosePlantingGuide.map(topic => `
+                    <div class="guide-topic-card" id="guide-${topic.id}">
+                        <div class="topic-header">
+                            <span class="topic-icon">${topic.icon}</span>
+                            <div class="topic-title-wrapper">
+                                <h3 class="topic-title">${topic.title}</h3>
+                                <p class="topic-description">${topic.description}</p>
+                            </div>
+                        </div>
+                        
+                        <div class="topic-content">
+                            ${topic.content.map(section => `
+                                <div class="topic-section">
+                                    <h4 class="section-subtitle">${section.subtitle}</h4>
+                                    <p class="section-details">${section.details.split('\n').join('<br>')}</p>
+                                </div>
+                            `).join('')}
+                        </div>
+                    </div>
+                `).join('')}
+            </div>
+        </div>
+    `;
+}
+
 function renderRoses() {
     const rosesList = document.getElementById('rosesList');
     const roses = getRosesToDisplay();
+    
+    if (state.roseCategory === 'guide') {
+        renderPlantingGuide();
+        return;
+    }
     
     if (roses.length === 0) {
         rosesList.innerHTML = `
@@ -502,6 +696,8 @@ function setupDropdownMenu() {
             state.roseCategory = category;
             
             if (category === 'climbing') {
+                state.activeHeightTab = null;
+            } else if (category === 'guide') {
                 state.activeHeightTab = null;
             } else {
                 state.activeHeightTab = 'below-1m';
@@ -676,6 +872,8 @@ function selectRose(roseId, type) {
         heightTab = 'around-1m';
     } else if (type.includes('Above')) {
         heightTab = 'above-1m';
+    } else if (type.includes('Planting')) {
+        category = 'guide';
     }
     
     state.roseCategory = category;
