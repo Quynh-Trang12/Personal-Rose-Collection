@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How to Plant - Personal Rose Collection</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:FILL@1&icon-names=local_florist" />
+</head>
+<body>
+    <div class="min-h-screen">
+        <header class="header">
+            <div class="container">
+                <div class="header-top">
+                    <a href="index.html" style="text-decoration: none;">
+                        <div class="header-logo">
+                            <div class="header-icon">
+                                <span class="material-symbols-outlined">local_florist</span>
+                            </div>
+                            <div>
+                                <h1 class="header-title">My Rose Collection</h1>
+                                <p class="header-subtitle">Personal rose list</p>
+                            </div>
+                        </div>
+                    </a>
+                    
+                    <nav class="nav-bar" style="justify-content: flex-end;">
+                        <a href="index.html" class="nav-link">Home</a>
+                        <a href="how-to-plant.html" class="nav-link active">How to Plant</a>
+                    </nav>
+                </div>
+            </div>
+        </header>
+
+        <main class="guides-container">
+            
+            <div id="gridView">
+                <div class="page-intro">
+                    <h2>Gardening Guide</h2>
+                    <p>Everything you need to know to grow healthy, beautiful roses. From the first planting to seasonal pruning, follow our expert guides.</p>
+                </div>
+                <div id="topicsGrid" class="topics-grid">
+                    </div>
+            </div>
+
+            <div id="articleView" class="article-view hidden-section">
+                <a href="how-to-plant.html" class="back-link">
+                    &larr; Back to all guides
+                </a>
+
+                <div class="article-header">
+                    <span id="articleMeta" class="article-meta">Guide</span>
+                    <h1 id="articleTitle" class="article-title">Topic Title</h1>
+                </div>
+
+                <img id="articleImage" src="" alt="" class="article-hero-image">
+
+                <div id="articleContent" class="article-body">
+                    </div>
+            </div>
+
+        </main>
+
+        <footer class="footer">
+            <div class="container">
+                <div class="footer-header">
+                    <div class="footer-brand">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 7.5a4.5 4.5 0 1 1 4.5 4.5M12 7.5A4.5 4.5 0 1 0 7.5 12M12 7.5V9m-4.5 3a4.5 4.5 0 1 0 4.5 4.5M7.5 12H9m7.5 0a4.5 4.5 0 1 1-4.5 4.5m4.5-4.5H15m-3 4.5V15"/></svg>
+                        <h3>Rose Garden Shop</h3>
+                    </div>
+                    <p class="footer-tagline">Your trusted source for beautiful roses</p>
+                </div>
+                <div class="footer-copyright">
+                    <p>© 2024 Rose Garden Shop. All rights reserved.</p>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script src="planting-guides.js"></script>
+</body>
+</html>
