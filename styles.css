@@ -12,6 +12,7 @@
 html {
     scroll-behavior: smooth;
     scrollbar-width: none;
+    scrollbar-gutter: stable;
 }
 
 body {
@@ -1078,4 +1079,179 @@ input:focus-visible {
 
 .rose-slider.grabbing {
     cursor: grabbing;
+}
+
+/* -------------------------------------------------------------------------- */
+/* 7. ROSE PLANTING GUIDE                                                     */
+/* -------------------------------------------------------------------------- */
+
+.planting-guide-container {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.guide-header {
+    background: linear-gradient(135deg, #e11d48, #f43f5e);
+    border-radius: 1.5rem;
+    padding: 2rem;
+    color: white;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(225, 29, 72, 0.2);
+}
+
+.guide-title {
+    font-size: 2rem;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 0.5rem;
+    letter-spacing: -0.02em;
+}
+
+.guide-subtitle {
+    font-size: 1rem;
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.9);
+    line-height: 1.5;
+}
+
+.guide-topics {
+    display: grid;
+    gap: 1.5rem;
+}
+
+.guide-topic-card {
+    background: white;
+    border-radius: 1.25rem;
+    box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.05);
+    border: 1px solid #f3f4f6;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    animation: fadeIn 0.4s ease-out;
+}
+
+.guide-topic-card:hover {
+    box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1);
+    transform: translateY(-4px);
+    border-color: #fecdd3;
+}
+
+.topic-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 1.2rem;
+    padding: 1.5rem;
+    background: linear-gradient(135deg, rgba(244, 63, 94, 0.05), rgba(225, 29, 72, 0.05));
+    border-bottom: 1px solid #f3f4f6;
+}
+
+.topic-icon {
+    font-size: 2.5rem;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 4rem;
+    height: 4rem;
+    background: white;
+    border-radius: 1rem;
+    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+}
+
+.topic-title-wrapper {
+    flex: 1;
+    min-width: 0;
+}
+
+.topic-title {
+    font-size: 1.375rem;
+    font-weight: 680;
+    color: #111827;
+    margin-bottom: 0.4rem;
+    letter-spacing: -0.01em;
+}
+
+.topic-description {
+    font-size: 0.9rem;
+    color: #6b7280;
+    line-height: 1.5;
+    font-weight: 500;
+}
+
+.topic-content {
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+}
+
+.topic-section {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+}
+
+.section-subtitle {
+    font-size: 1rem;
+    font-weight: 650;
+    color: #1f2937;
+    letter-spacing: -0.005em;
+}
+
+.section-details {
+    font-size: 0.9375rem;
+    line-height: 1.65;
+    color: #4b5563;
+    white-space: pre-wrap;
+    word-break: break-word;
+}
+
+.topic-section:not(:last-child) {
+    padding-bottom: 0.75rem;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+/* Responsive Design for Planting Guide */
+@media (max-width: 800px) {
+    .guide-title {
+        font-size: 1.5rem;
+    }
+
+    .guide-subtitle {
+        font-size: 0.9rem;
+    }
+
+    .topic-header {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 1rem;
+    }
+
+    .topic-title {
+        font-size: 1.1rem;
+    }
+
+    .topic-description {
+        font-size: 0.85rem;
+    }
+
+    .topic-icon {
+        font-size: 2rem;
+        width: 3.5rem;
+        height: 3.5rem;
+    }
+
+    .topic-content {
+        padding: 1rem;
+        gap: 1rem;
+    }
+
+    .section-subtitle {
+        font-size: 0.95rem;
+    }
+
+    .section-details {
+        font-size: 0.875rem;
+    }
 }
