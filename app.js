@@ -709,11 +709,22 @@ function handleClickOutside(event) {
 
 // Initialize Application
 function init() {
+    // --- Initialize OverlayScrollbars ---
+    const { OverlayScrollbars } = OverlayScrollbarsGlobal;
+    OverlayScrollbars(document.body, {
+        scrollbars: {
+            theme: 'os-theme-rose', // Use our custom CSS theme
+            // autoHide: 'leave',      // Hide when mouse leaves the window (fade-in effect)
+            autoHide: 'scroll',     // Hide when scrolling stops
+            autoHideDelay: 500,     // Wait 500ms before fading out
+            clickScroll: true       // Allow clicking track to scroll
+        }
+    });
+
     loadWishlist();
     updateWishlistCount();
     updateRoseTypeLabel();
     renderHeightTabs();
-    // renderTabDescription();
     renderRoses();
     setupDropdownMenu();
     setupWishlistButton();

@@ -1,18 +1,15 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
+<html lang="en" data-overlayscrollbars-initialize> <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Rose Collection</title>
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/overlayscrollbars@2.10.0/styles/overlayscrollbars.min.css">
+    
     <link rel="stylesheet" href="styles-vanilla.css">
-    <!-- Otionally: Added preconnect links for faster font loading from Google Fonts -->
-    <!-- <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:FILL@1&icon-names=local_florist,favorite" />
 </head>
-<body>
-    <div class="min-h-screen">
-        <!-- Header -->
+<body data-overlayscrollbars-initialize> <div class="min-h-screen">
         <header class="header">
             <div class="container">
                 <div class="header-top">
@@ -26,9 +23,7 @@
                         </div>
                     </div>
                     
-                    <!-- Navigation Bar -->
                     <nav class="nav-bar">
-                    <!-- Rose Type Dropdown -->
                     <div class="dropdown-container">
                         <button id="roseTypeBtn" class="dropdown-btn">
                             <span class="dropdown-label">Rose Type</span>
@@ -46,7 +41,6 @@
                         </div>
                     </div>
 
-                    <!-- Search Bar -->
                     <div class="search-container" id="searchContainer">
                         <div class="search-input-wrapper">
                             <svg class="search-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -67,11 +61,9 @@
                             </button>
                         </div>
                         
-                        <!-- Search Suggestions Dropdown -->
                         <div id="suggestionsDropdown" class="suggestions-dropdown hidden"></div>
                     </div>
 
-                    <!-- Wishlist Button -->
                     <button id="wishlistBtn" class="wishlist-nav-btn">
                         <span class="material-symbols-outlined">favorite</span>
                         <span id="wishlistCount" class="wishlist-count">0</span>
@@ -81,31 +73,20 @@
             </div>
         </header>
 
-        <!-- Height Tabs Navigation -->
         <div class="height-tabs-nav">
             <div class="container">
                 <div class="height-tabs-wrapper" id="heightTabsWrapper">
-                    <!-- Height tabs will be dynamically generated -->
-                </div>
+                    </div>
             </div>
         </div>
 
-        <!-- Main Content -->
         <main class="main-content">
             <div class="container">
-                <!-- Tab Description -->
-                <!-- <div class="tab-description">
-                    <p id="tabDescriptionText"></p>
-                </div> -->
-
-                <!-- Roses List -->
                 <div id="rosesList" class="roses-list">
-                    <!-- Rose cards will be dynamically generated -->
-                </div>
+                    </div>
             </div>
         </main>
 
-        <!-- Footer -->
         <footer class="footer">
             <div class="container">
                 <div class="footer-header">
@@ -119,7 +100,7 @@
                 </div>
                 
                 <div class="footer-links">
-                    <a href="https://www.rosegardenexample.com" target="_blank" rel="noopener noreferrer" class="footer-link">
+                    <a href="#" class="footer-link">
                         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                             <circle cx="12" cy="12" r="10"/>
                             <path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/>
@@ -138,7 +119,7 @@
                         </svg>
                         <div>
                             <div class="footer-link-label">Address</div>
-                            <div class="footer-link-text">123 Rose Street, Garden City, GC 12345</div>
+                            <div class="footer-link-text">123 Rose Street, Garden City</div>
                         </div>
                     </div>
                     
@@ -160,6 +141,7 @@
         </footer>
     </div>
 
+    <script src="https://cdn.jsdelivr.net/npm/overlayscrollbars@2.10.0/browser/overlayscrollbars.browser.es6.min.js"></script>
     <script src="app-vanilla-new.js"></script>
 </body>
 </html>
