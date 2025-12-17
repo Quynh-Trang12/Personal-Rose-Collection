@@ -53,6 +53,27 @@ body {
 }
 
 /* -------------------------------------------------------------------------- */
+/* CUSTOM SCROLLBAR THEME (OverlayScrollbars)                                 */
+/* -------------------------------------------------------------------------- */
+.os-theme-rose {
+    /* The track is invisible */
+    --os-track-bg: transparent;
+    
+    /* The handle (pill) colors */
+    --os-handle-bg: rgba(253, 164, 175, 0.9); /* Soft Pink (Rose-300) default */
+    --os-handle-bg-hover: #f43f5e;           /* Brand Pink (Rose-500) on hover */
+    --os-handle-bg-active: #be123c;          /* Darker Pink on click */
+    
+    /* The Pill Shape */
+    --os-handle-border-radius: 99px;
+    
+    /* Size and Spacing */
+    --os-size: 12px;                         /* Width of the scrollbar */
+    --os-padding-perpendicular: 3px;         /* Space from the edge of screen */
+    --os-padding-axis: 3px;                  /* Space from top/bottom */
+}
+
+/* -------------------------------------------------------------------------- */
 /* 2. HEADER STYLES (Modern & Breathable)                                     */
 /* -------------------------------------------------------------------------- */
 
@@ -498,64 +519,13 @@ body {
 .main-content {
     padding: 2rem 0;
     margin: 0;
-    max-height: calc(112vh - 180px);
-    overflow-y: scroll;
-    overflow-x: hidden;
     
-    scrollbar-width: auto;
-    /* Hide scrollbar by default */
-    /* scrollbar-width: none; Firefox
-    -ms-overflow-style: none; IE/Edge */
+    /* REMOVED max-height and overflow so the BODY can scroll instead */
+    /* max-height: calc(112vh - 180px); */
+    /* overflow-y: scroll; */
+    
+    min-height: 50vh; /* Just to ensure it has some height */
 }
-
-/* Webkit browsers - hide scrollbar by default */
-/* .main-content::-webkit-scrollbar {
-    width: 0;
-    height: 0;
-} */
-
-/* Show scrollbar only on hover */
-/* .main-content:hover {
-    scrollbar-width: auto; Firefox
-    scrollbar-color: #cbd5e1 transparent;
-} */
-
-.main-content::-webkit-scrollbar {
-    width: 6px;
-}
-
-.main-content::-webkit-scrollbar-track {
-    background-color: rgba(0, 0, 0, 0.1);
-}
-
-/* .main-content:hover::-webkit-scrollbar-track {
-    background-color: rgba(0, 0, 0, 0.1);
-} */
-
-.main-content::-webkit-scrollbar-thumb {
-    background-color: rgba(0, 0, 0, 0.2);
-    border-radius: 10px;
-}
-
-/* .main-content:hover::-webkit-scrollbar-thumb:hover {
-    background-color: rgba(0, 0, 0, 0.3);
-} */
-
-/* .tab-description {
-    margin-bottom: 1.5rem;
-    background: white;
-    border-radius: 1rem;
-    padding: 1.5rem;
-    box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.05);
-    border: 1px solid #f3f4f6;
-    text-align: center;
-}
-
-.tab-description p {
-    font-size: 1rem;
-    line-height: 1.5;
-    color: #4b5563;
-} */
 
 /* Grid Layout */
 .roses-list {
